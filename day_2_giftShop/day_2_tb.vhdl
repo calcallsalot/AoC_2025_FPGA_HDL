@@ -11,7 +11,7 @@ end entity;
 architecture sim of tb_productID is
 
 
-  -- DUT component (MATCHES your productID entity: no last_range)
+  -- DUT component 
 
   component productID is
     port (
@@ -94,7 +94,7 @@ architecture sim of tb_productID is
     variable acc : unsigned(63 downto 0) := (others => '0');
     variable d   : natural;
   begin
-    -- skip whitespace (just in case)
+
     while idx <= s'length and (s(idx) = ' ' or s(idx) = HT) loop
       idx := idx + 1;
     end loop;
@@ -149,7 +149,7 @@ begin
 
     variable count : natural := 0;
 
-    -- TB accumulator across ALL ranges (since DUT resets sum each start)
+
     variable total_sum : unsigned(127 downto 0) := (others => '0');
   begin
     -- Reset
